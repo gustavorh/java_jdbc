@@ -55,7 +55,7 @@ public class ProductoRepositoryImpl implements Repository<Producto> {
     public void add(Producto producto) {
         String sql;
         if (producto.getId() != null && producto.getId() > 0) {
-            sql = "UPDATE productos SET id = ? WHERE id = ?";
+            sql = "UPDATE productos SET nombre = ?, precio=? WHERE id = ?";
         } else {
             sql = "INSERT INTO productos (nombre, precio, fecha_registro) VALUES (?, ?, ?)";
         }
